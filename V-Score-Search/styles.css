@@ -1,0 +1,86 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    text-align: center;
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Adjust margin as needed */
+}
+#searchInput {
+    width: 20%;
+    padding: 10px;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+#instructionsBox {
+    float: right;         /* Float the box to the right */
+    width: 200px;         /* Set a smaller width */
+    margin: 10px;         /* Add some margin */
+    padding: 10px;        /* Internal padding */
+    background-color: #f9f9f9;  /* Background color */
+    border: 1px solid #ccc;     /* Border style */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);  /* Shadow for a subtle 3D effect */
+}
+
+#instructionsBox h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+}
+
+#instructionsBox p {
+    margin: 5px 0;
+    font-size: 0.7em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.sortable {
+    cursor: pointer;
+}
+
+
+.sortable:hover {
+    background-color: #ddd;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #bd1919;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+#headerImage {
+    display: block;
+    margin: 10 auto 20px; 
+    max-width: 50%;      
+    height: auto;        
+}
+
+footer {
+    text-align: right;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #f2f2f2;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+    color: #555;
+}
+footer p {
+    margin: 0;
+}
