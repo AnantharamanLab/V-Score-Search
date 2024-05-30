@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to load CSV data
     function loadCSV() {
-        Papa.parse('V-Score-Search/Databases/data.csv', {
+        Papa.parse('./V-Score-Search/Databases/data.csv', {
             download: true,
             header: true,
             complete: function(results) {
