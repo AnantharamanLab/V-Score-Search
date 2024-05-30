@@ -8,27 +8,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const rowsPerPage = 500;
 
     // Function to load CSV data
-function loadCSV() {
-    fetch('./V-Score-Search/Databases/data.csv')
-        .then(response => response.text())
-        .then(csvData => {
-            Papa.parse(csvData, {
-                header: true,
-                complete: function(results) {
-                    console.log('Parsed CSV data:', results.data); // Log parsed data
-                    tableData = results.data;
-                    displayData(tableData);
-                    renderPagination();
-                },
-                error: function(error) {
-                    console.error('Error parsing CSV:', error); // Log errors
-                }
-            });
-        })
-        .catch(error => {
-            console.error('Error fetching CSV:', error); // Log errors
+    function loadCSV() {
+        Papa.parse('./V-Score-Search/Databases/data.csv', {
+            download: true,
+            header: true,
+            complete: function(results) {
+                console.log('Parsed CSV data:', results.data); // Log parsed data
+                tableData = results.data;
+                displayData(tableData);
+                renderPagination();
+            },
+            error: function(error) {
+                console.error('Error parsing CSV:', error); // Log errors
+            }
         });
-}
+    }
 
     // Function to display data in the table
     function displayData(data) {
