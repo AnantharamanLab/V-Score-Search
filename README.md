@@ -63,7 +63,8 @@ See probability formulae for determining whether a genome is viral in our paper 
 Here we provide a summary table of the probability of genome being viral across different sequence sizes as below:
 
 ### Table 1 Probability of being viral genomes across different sequence sizes.
-![image](https://github.com/user-attachments/assets/479d1da9-553e-4313-b843-523ea3df5fba)
+
+![image](https://github.com/user-attachments/assets/ee3ec73b-443a-4015-b0f2-47580d103229)
 
 Predicted viral genomes were identified based on the following criteria: (1) sequences with at least one AV-score (from VOG, PHROG, KEGG, or Pfam) exceeding the corresponding cutoffs for each fragment size (e.g., a PHROG AV-score > 4.24 or a VOG AV-score > 4.91 for a 2.5 kb scaffold; detailed cutoffs by fragment size are provided in Table 1). For sequences larger than 15 kb, cutoffs for 14−15 kb fragments were used. (2) Sequences meeting criterion (1) were further filtered for completeness >0%, as assessed by CheckV[8] v1.0.13.
 
