@@ -8,35 +8,12 @@ For more detail on V-scores and V<sub>L</sub>-scores and how they work, please s
 ### Fig. 1| Concepts of V-score and V<sub>L</sub>-score. 
 Workflow of V-score and V<sub>L</sub>-score generation. Nine representatives of viral taxa are shown here for the diverse viruses used in the study.  A scale for V-scores and V<sub>L</sub>-scores is displayed by two-sided arrows going from 0 to 10 and <0 to X, respectively, suggesting low scores indicate non-viral and high-scores indicate viral.
 
-## Getting Started Part 1: Determine the probability that a protein sequence is viral.
+## Getting Started: Determine the probability that a genome sequence is viral
 
 ### Recommended steps before searching: 
 
 1.	Identify and translate open reading frames in genomes using pyrodigal-gv[1, 2] (github.com/althonos/pyrodigal-gv).  
-2.	Use EggNOG-mapper[3] (parameters: -m mmseqs --evalue 10-5) to annotate the proteins with the eggNOG database. 
-eggNOG: evolutionary gene genealogy Non-supervised Orthologous Groups (http://eggnog6.embl.de/)
-
-### Search and assign scores: 
-
-1.	Search annotations on V-Score-Search (https://anantharamanlab.github.io/V-Score-Search/)
-2.	Assign V<sub>L</sub>-score of eggNOG to each protein.
-
-### Explanation for scores: 
-
-Probability formula for determining whether a protein is viral: 
-
-y = 0.21 − 0.09 x + 0.069 x2 − 0.0038 x3 
-(y: probability; x: eggNOG V<sub>L</sub>−score)
-
-For example, a 70% probability is indicated by an eggNOG V<sub>L</sub>-score of 3.97, while a 90% probability corresponds to an eggNOG V<sub>L</sub>-score of 4.65. If the eggNOG V<sub>L</sub>-score exceeds 3.97, the probability that a protein is viral surpasses 70%. Similarly, if the eggNOG V<sub>L</sub>-score exceeds 4.65, the probability that a protein is viral exceeds 90%.
-
-
-## Getting Started Part 2: Determine the probability that a genome sequence is viral
-
-### Recommended steps before searching: 
-
-1.	Identify and translate open reading frames in genomes using pyrodigal-gv[1, 2] (github.com/althonos/pyrodigal-gv).  
-2.	Align translated proteins to Pfam-A[4] HMMs, VOG HMMs, and KEGG[5] KO HMMs using pyhmmer[6, 7] hmmsearch[6] with a maximum e-value of 1e-05.
+2.	Align translated proteins to Pfam-A[3] HMMs, VOG HMMs, and KEGG[4] KO HMMs using pyhmmer[5, 6] hmmsearch[5] with a maximum e-value of 1e-05.
 3.	Employ MMseqs2 (parameter: E-value ≤ 10-5) to search the proteins against the PHROG database. Only keep the hit with the highest score.
   VOG: Virus Orthologous Groups database (https://fileshare.csb.univie.ac.at/vog/)
   PHROG: Prokaryotic Virus Remote Homologous Groups database (https://phrogs.lmge.uca.fr/)
@@ -64,7 +41,7 @@ Here we provide a summary table of the probability of genome being viral across 
 
 ![image](https://github.com/user-attachments/assets/ee3ec73b-443a-4015-b0f2-47580d103229)
 
-Predicted viral genomes were identified based on the following criteria: (1) sequences with at least one AV-score (from VOG, PHROG, KEGG, or Pfam) exceeding the corresponding cutoffs for each fragment size (e.g., a PHROG AV-score > 4.24 or a VOG AV-score > 4.91 for a 2.5 kb scaffold; detailed cutoffs by fragment size are provided in Table 1). For sequences larger than 15 kb, cutoffs for 14−15 kb fragments were used. (2) Sequences meeting criterion (1) were further filtered for completeness >0%, as assessed by CheckV[8] v1.0.13.
+Predicted viral genomes were identified based on the following criteria: (1) sequences with at least one AV-score (from VOG, PHROG, KEGG, or Pfam) exceeding the corresponding cutoffs for each fragment size (e.g., a PHROG AV-score > 4.24 or a VOG AV-score > 4.91 for a 2.5 kb scaffold; detailed cutoffs by fragment size are provided in Table 1). For sequences larger than 15 kb, cutoffs for 14−15 kb fragments were used. (2) Sequences meeting criterion (1) were further filtered for completeness >0%, as assessed by CheckV[7] v1.0.13.
 
 ## Contact
 Please contact Karthik Anantharaman (karthik@bact.wisc.edu or GitHub Issues) with any questions, concerns or comments.
@@ -79,10 +56,9 @@ GNU General Public License as published by the Free Software Foundation, either 
 ## References
 1.	Camargo AP, Roux S, Schulz F et al. Identification of mobile genetic elements with genomad. Nat Biotechnol. 2023;42:1303-12 https://doi.org/10.1038/s41587-023-01953-y
 2.	Hyatt D, Chen GL, Locascio PF et al. Prodigal: Prokaryotic gene recognition and translation initiation site identification. BMC Bioinf. 2010;11:1-11 https://doi.org/10.1186/1471-2105-11-119
-3.	Cantalapiedra CP, Hernandez-Plaza A, Letunic I et al. Eggnog-mapper v2: Functional annotation, orthology assignments, and domain prediction at the metagenomic scale. Mol Biol Evol. 2021;38:5825-29 https://doi.org/10.1093/molbev/msab293
-4.	Mistry J, Chuguransky S, Williams L et al. Pfam: The protein families database in 2021. Nucleic Acids Res. 2021;49:D412-D19 https://doi.org/10.1093/nar/gkaa913
-5.	Kanehisa M, Sato Y, Kawashima M et al. Kegg as a reference resource for gene and protein annotation. Nucleic Acids Res. 2016;44:D457-D62
-6.	Eddy SR. Accelerated profile hmm searches. PLoS Comput Biol. 2011;7:e1002195
-7.	Larralde M, Zeller G. Pyhmmer: A python library binding to hmmer for efficient sequence analysis. Bioinformatics. 2023;39:btad214
-8.	Nayfach S, Camargo AP, Schulz F et al. Checkv assesses the quality and completeness of metagenome-assembled viral genomes. Nat Biotechnol. 2020;39:578-85 https://doi.org/10.1038/s41587-020-00774-7
+3.	Mistry J, Chuguransky S, Williams L et al. Pfam: The protein families database in 2021. Nucleic Acids Res. 2021;49:D412-D19 https://doi.org/10.1093/nar/gkaa913
+4.	Kanehisa M, Sato Y, Kawashima M et al. Kegg as a reference resource for gene and protein annotation. Nucleic Acids Res. 2016;44:D457-D62
+5.	Eddy SR. Accelerated profile hmm searches. PLoS Comput Biol. 2011;7:e1002195
+6.	Larralde M, Zeller G. Pyhmmer: A python library binding to hmmer for efficient sequence analysis. Bioinformatics. 2023;39:btad214
+7.	Nayfach S, Camargo AP, Schulz F et al. Checkv assesses the quality and completeness of metagenome-assembled viral genomes. Nat Biotechnol. 2020;39:578-85 https://doi.org/10.1038/s41587-020-00774-7
 
