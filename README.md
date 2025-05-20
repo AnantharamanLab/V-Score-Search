@@ -1,12 +1,12 @@
 # V-Score-Search
 
-V-Score-Search is an online-search website for the public to search V-scores and VL-scores associated with every protein cluster or family in five widely used public databases including PHROG, VOG, KEGG, Pfam, and eggNOG. V-scores and VL-scores are quantitative metrics to serve as a virus-like signature for differentiating between viral and non-viral protein families and genomes (Fig. 1). We demonstrate specific use cases of V-scores and VL-scores in virus identification, prophage discovery, annotation of host-derived and metabolic proteins on viral genomes, and virus genome binning. V-scores and VL-scores can serve as a metric to define the likelihood of protein families being detected in viruses and enable diverse applications associated with viral genomics, ecology, and evolution.
-For more detail on V-scores and VL-scores and how they work, please see our paper (https://www.biorxiv.org/content/10.1101/2024.10.24.619987v1).
+V-Score-Search is an online-search website for the public to search V-scores and V<sub>L</sub>-scores associated with every protein cluster or family in five widely used public databases including PHROG, VOG, KEGG, Pfam, and eggNOG. V-scores and V<sub>L</sub>-scores are quantitative metrics to serve as a virus-like signature for differentiating between viral and non-viral protein families and genomes (Fig. 1). We demonstrate specific use cases of V-scores and V<sub>L</sub>-scores in virus identification, prophage discovery, annotation of host-derived and metabolic proteins on viral genomes, and virus genome binning. V-scores and V<sub>L</sub>-scores can serve as a metric to define the likelihood of protein families being detected in viruses and enable diverse applications associated with viral genomics, ecology, and evolution.
+For more detail on V-scores and V<sub>L</sub>-scores and how they work, please see our paper (https://www.biorxiv.org/content/10.1101/2024.10.24.619987v1).
 
 <p align="center"> <img src="Software/figure1.png" height="300" /> </p>
 
 ### Fig. 1| Concepts of V-score and V<sub>L</sub>-score. 
-Workflow of V-score and VL-score generation. Nine representatives of viral taxa are shown here for the diverse viruses used in the study.  A scale for VL-scores and VL-scores is displayed by two-sided arrows going from 0 to 10 and <0 to X, respectively, suggesting low scores indicate non-viral and high-scores indicate viral.
+Workflow of V-score and V<sub>L</sub>-score generation. Nine representatives of viral taxa are shown here for the diverse viruses used in the study.  A scale for V-scores and V<sub>L</sub>-scores is displayed by two-sided arrows going from 0 to 10 and <0 to X, respectively, suggesting low scores indicate non-viral and high-scores indicate viral.
 
 ## Getting Started Part 1: Determine the probability that a protein sequence is viral.
 
@@ -19,16 +19,16 @@ eggNOG: evolutionary gene genealogy Non-supervised Orthologous Groups (http://eg
 ### Search and assign scores: 
 
 1.	Search annotations on V-Score-Search (https://anantharamanlab.github.io/V-Score-Search/)
-2.	Assign VL-score of eggNOG to each protein.
+2.	Assign V<sub>L</sub>-score of eggNOG to each protein.
 
 ### Explanation for scores: 
 
 Probability formula for determining whether a protein is viral: 
 
 y = 0.21 − 0.09 x + 0.069 x2 − 0.0038 x3 
-(y: probability; x: eggNOG VL−score)
+(y: probability; x: eggNOG V<sub>L</sub>−score)
 
-For example, a 70% probability is indicated by an eggNOG VL-score of 3.97, while a 90% probability corresponds to an eggNOG VL-score of 4.65. If the eggNOG VL-score exceeds 3.97, the probability that a protein is viral surpasses 70%. Similarly, if the eggNOG VL-score exceeds 4.65, the probability that a protein is viral exceeds 90%.
+For example, a 70% probability is indicated by an eggNOG V<sub>L</sub>-score of 3.97, while a 90% probability corresponds to an eggNOG V<sub>L</sub>-score of 4.65. If the eggNOG V<sub>L</sub>-score exceeds 3.97, the probability that a protein is viral surpasses 70%. Similarly, if the eggNOG V<sub>L</sub>-score exceeds 4.65, the probability that a protein is viral exceeds 90%.
 
 
 ## Getting Started Part 2: Determine the probability that a genome sequence is viral
@@ -46,13 +46,13 @@ For example, a 70% probability is indicated by an eggNOG VL-score of 3.97, while
 ### Search and assign scores: 
 
 1.	Search annotations on V-Score-Search (https://anantharamanlab.github.io/V-Score-Search/)
-2.	Assign V-score and VL-score of KEGG, VOG, Pfam, and PHROG to each protein.
-3.	Calculate average V-score and VL-score (AV-score and AVL-score) for each genome. The AV-score and AVL-score of KEGG and Pfam are expressed as:
+2.	Assign V-score and V<sub>L</sub>-score of KEGG, VOG, Pfam, and PHROG to each protein.
+3.	Calculate average V-score and V<sub>L</sub>-score (AV-score and AV<sub>L</sub>-score) for each genome. The AV-score and AV<sub>L</sub>-score of KEGG and Pfam are expressed as:
       AV-score = (Sum of V-score of Proteins with Significant Hits) / (Number of Proteins with Significant Hits);
-      AVL-score = (Sum of VL-score of Proteins with Significant Hits) / (Number of Proteins with Significant Hits).
-4.	Calculate average V-score and VL-score (AV-score and AVL-score) for each genome. The AV-score and AVL-score of PHROG and VOG are expressed as:
+      AV<sub>L</sub>-score = (Sum of V<sub>L</sub>-score of Proteins with Significant Hits) / (Number of Proteins with Significant Hits).
+4.	Calculate average V-score and V<sub>L</sub>-score (AV-score and AV<sub>L</sub>-score) for each genome. The AV-score and AV<sub>L</sub>-score of PHROG and VOG are expressed as:
       AV-score = (Sum of V-score of Proteins with Significant Hits) / (Total Number of Proteins Encoded in A Genome);
-      AVL-score = (Sum of VL-score of Proteins with Significant Hits) / (Total Number of Proteins Encoded in A Genome).
+      AV<sub>L</sub>-score = (Sum of V<sub>L</sub>-score of Proteins with Significant Hits) / (Total Number of Proteins Encoded in A Genome).
 
 ### Explanation for scores: 
 
