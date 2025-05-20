@@ -3,10 +3,7 @@
 V-Score-Search is an online-search website for the public to search V-scores and VL-scores associated with every protein cluster or family in five widely used public databases including PHROG, VOG, KEGG, Pfam, and eggNOG. V-scores and VL-scores are quantitative metrics to serve as a virus-like signature for differentiating between viral and non-viral protein families and genomes (Fig. 1). We demonstrate specific use cases of V-scores and VL-scores in virus identification, prophage discovery, annotation of host-derived and metabolic proteins on viral genomes, and virus genome binning. V-scores and VL-scores can serve as a metric to define the likelihood of protein families being detected in viruses and enable diverse applications associated with viral genomics, ecology, and evolution.
 For more detail on V-scores and VL-scores and how they work, please see our paper (https://www.biorxiv.org/content/10.1101/2024.10.24.619987v1).
 
-
-
-<p align="center"> <img src="Software/figure1.png" height="200" /> </p>
-![image](https://github.com/AnantharamanLab/V-Score-Search/tree/main/Software/figure1.png)
+<p align="center"> <img src="Software/figure1.png" height="400" /> </p>
 
 ### Fig. 1| Concepts of V-score and VL-score. 
 a, Workflow of V-score and VL-score generation. Nine representatives of viral taxa are shown here for the diverse viruses used in the study.  A scale for VL-scores and VL-scores is displayed by two-sided arrows going from 0 to 10 and <0 to X, respectively, suggesting low scores indicate non-viral and high-scores indicate viral. b, Frequency of virus-associated annotations with V-score ≥ 0.01 and/or VL-score ≥ 0. c, Top five annotations associated with viruses based on VL-scores. d, Distribution of eggNOG VL-score across proteins from prokaryotic chromosomes (n = 7,561,596), plasmids (n = 437,241) and prokaryotic viruses (n = 83,664). The horizontal line that splits the box represents the median, upper and lower sides of the box represent upper and lower quartiles, whiskers are 1.5 times the interquartile ranges and data points beyond whiskers are considered potential outliers. e, Relationship between the fraction of viral proteins used in (d) and eggNOG VL-score.
