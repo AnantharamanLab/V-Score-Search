@@ -5,7 +5,7 @@ For more detail on V-scores and V<sub>L</sub>-scores and how they work, please s
 
 <p align="left"> <img src="Software/figure1.png" height="300" /> </p>
 
-### Fig. 1| Concepts of V-score and V<sub>L</sub>-score. 
+### Fig. 1 Concepts of V-score and V<sub>L</sub>-score. 
 Workflow of V-score and V<sub>L</sub>-score generation. Nine representatives of viral taxa are shown here for the diverse viruses used in the study.  A scale for V-scores and V<sub>L</sub>-scores is displayed by two-sided arrows going from 0 to 10 and <0 to X, respectively, suggesting low scores indicate non-viral and high-scores indicate viral.
 
 ## Getting Started: Determine the probability that a genome sequence is viral
