@@ -4,7 +4,8 @@ V-Score-Search is an online-search website for the public to search V-scores and
 For more detail on V-scores and VL-scores and how they work, please see our paper (https://www.biorxiv.org/content/10.1101/2024.10.24.619987v1).
 
 
-<img src="https://github.com/AnantharamanLab/V-Score-Search/tree/main/Software/figure1.png" width="85%">
+
+<p align="center"> <img src="Software/figure1.png" height="200" /> </p>
 ![image](https://github.com/AnantharamanLab/V-Score-Search/tree/main/Software/figure1.png)
 
 ### Fig. 1| Concepts of V-score and VL-score. 
