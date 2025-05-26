@@ -12,9 +12,21 @@ Workflow of V-score and V<sub>L</sub>-score generation. Nine representatives of 
 
 ### Recommended steps before searching: 
 
-1.	Identify and translate open reading frames in genomes using pyrodigal-gv[1, 2] (github.com/althonos/pyrodigal-gv).  
-2.	Align translated proteins to Pfam-A[3] HMMs, VOG HMMs, and KEGG[4] KO HMMs using pyhmmer[5, 6] hmmsearch[5] with a maximum e-value of 1e-05.
-3.	Employ MMseqs2 (parameter: E-value ≤ 10-5) to search the proteins against the PHROG database. Only keep the hit with the highest score.
+1.	Identify and translate open reading frames in genomes using pyrodigal-gv[1, 2] (github.com/althonos/pyrodigal-gv).
+```
+e.g. pyrodigal-gv -i input_file.fasta -a gene_translations.faa -d gene_sequences.fna
+```
+2.	Align translated proteins to Pfam-A[3] HMMs, VOG HMMs, and KEGG[4] KO HMMs using pyhmmer[5, 6] hmmsearch[5] with a maximum e-value of 10<sup>-5.
+```
+e.g. hmmsearch -o /dev/null --tblout hmmsearch_out_for_viruses_VS_VOG.hmmout -E 1e-5 /path/to/VOG_hmm_profiles gene_translations.faa
+```
+3.	Employ MMseqs2 (parameter: E-value ≤ 10<sup>-5) to search the proteins against the PHROG database. Only keep the hit with the highest score.
+```
+e.g.
+mmseqs createdb gene_translations.faa mmseqs_query_seq
+mmseqs search mmseqs_query_seq path/to/phrogs_profile_db mmseqs_results_mmseqs ./tmp -e 1e-5
+mmseqs createtsv mmseqs_query_seq path/to/phrogs_profile_db mmseqs_results_mmseqs mmseqs_results.tsv 
+```
   VOG: Virus Orthologous Groups database (https://fileshare.csb.univie.ac.at/vog/)
   PHROG: Prokaryotic Virus Remote Homologous Groups database (https://phrogs.lmge.uca.fr/)
   KEGG: Kyoto Encyclopedia of Genes and Genomes (https://www.genome.jp/kegg/)
@@ -27,6 +39,7 @@ Workflow of V-score and V<sub>L</sub>-score generation. Nine representatives of 
 3.	Calculate average V-score and V<sub>L</sub>-score (AV-score and AV<sub>L</sub>-score) for each genome. The AV-score and AV<sub>L</sub>-score of KEGG and Pfam are expressed as:
       AV-score = (Sum of V-score of Proteins with Significant Hits) / (Number of Proteins with Significant Hits);
       AV<sub>L</sub>-score = (Sum of V<sub>L</sub>-score of Proteins with Significant Hits) / (Number of Proteins with Significant Hits).
+ 
 4.	Calculate average V-score and V<sub>L</sub>-score (AV-score and AV<sub>L</sub>-score) for each genome. The AV-score and AV<sub>L</sub>-score of PHROG and VOG are expressed as:
       AV-score = (Sum of V-score of Proteins with Significant Hits) / (Total Number of Proteins Encoded in A Genome);
       AV<sub>L</sub>-score = (Sum of V<sub>L</sub>-score of Proteins with Significant Hits) / (Total Number of Proteins Encoded in A Genome).
