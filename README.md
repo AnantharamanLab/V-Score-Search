@@ -20,7 +20,7 @@ e.g. pyrodigal-gv -i input_file.fasta -a gene_translations.faa -d gene_sequences
 ```
 e.g. hmmsearch -o /dev/null --tblout hmmsearch_out_for_viruses_VS_VOG.hmmout -E 1e-5 /path/to/VOG_hmm_profiles gene_translations.faa
 ```
-3.	Employ MMseqs2 (parameter: E-value ≤ 10<sup>-5) to search the proteins against the PHROG database. Only keep the hit with the highest score.
+3.	Employ MMseqs2 (parameter: E-value ≤ 10<sup>-5</sup>) to search the proteins against the PHROG database. Only keep the hit with the highest score.
 ```
 e.g.
 mmseqs createdb gene_translations.faa mmseqs_query_seq
