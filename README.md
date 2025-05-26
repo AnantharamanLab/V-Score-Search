@@ -39,11 +39,11 @@ mmseqs createtsv mmseqs_query_seq path/to/phrogs_profile_db mmseqs_results_mmseq
 3.	Calculate average V-score and V<sub>L</sub>-score (AV-score and AV<sub>L</sub>-score) for each genome. The AV-score and AV<sub>L</sub>-score of KEGG and Pfam are expressed as:
       AV-score = (Sum of V-score of Proteins with Significant Hits) / (Number of Proteins with Significant Hits);
       AV<sub>L</sub>-score = (Sum of V<sub>L</sub>-score of Proteins with Significant Hits) / (Number of Proteins with Significant Hits).
- 
+<p align="left"> <img src="Software/Picture1_equation1.png" height="300" /> </p>
 4.	Calculate average V-score and V<sub>L</sub>-score (AV-score and AV<sub>L</sub>-score) for each genome. The AV-score and AV<sub>L</sub>-score of PHROG and VOG are expressed as:
       AV-score = (Sum of V-score of Proteins with Significant Hits) / (Total Number of Proteins Encoded in A Genome);
       AV<sub>L</sub>-score = (Sum of V<sub>L</sub>-score of Proteins with Significant Hits) / (Total Number of Proteins Encoded in A Genome).
-
+<p align="left"> <img src="Software/Picture1_equation2.png" height="300" /> </p>
 ### Explanation for scores: 
 
 See probability formulae for determining whether a genome is viral in our paper (https://www.biorxiv.org/content/10.1101/2024.10.24.619987v1).
