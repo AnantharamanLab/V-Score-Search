@@ -28,8 +28,11 @@ mmseqs search mmseqs_query_seq path/to/phrogs_profile_db mmseqs_results_mmseqs .
 mmseqs createtsv mmseqs_query_seq path/to/phrogs_profile_db mmseqs_results_mmseqs mmseqs_results.tsv 
 ```
   VOG: Virus Orthologous Groups database (https://fileshare.csb.univie.ac.at/vog/)
+  
   PHROG: Prokaryotic Virus Remote Homologous Groups database (https://phrogs.lmge.uca.fr/)
+  
   KEGG: Kyoto Encyclopedia of Genes and Genomes (https://www.genome.jp/kegg/)
+  
   Pfam: a large collection of protein families (http://pfam-legacy.xfam.org/)
 
 ### Search and assign scores: 
